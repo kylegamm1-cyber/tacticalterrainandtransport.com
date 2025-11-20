@@ -1,45 +1,182 @@
-<html><head><title>Book Transport</title>
-<style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Book Horse Transport | Tactical Terrain & Transport</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <style>
 body{font-family:Arial,Helvetica,sans-serif;margin:0;background:#f7f4ee;color:#222;}
 header,footer{background:#5A4A2F;color:#fff;padding:15px 30px;}
 a{color:#5A4A2F;text-decoration:none;}header a{color:#fff;}
 .nav{display:flex;justify-content:space-between;align-items:center;gap:20px;}
 .nav-left{display:flex;align-items:center;gap:10px;}
 .nav-left img{height:55px;width:auto;border-radius:4px;}
-.section{padding:30px;}
-h1,h2{color:#5A4A2F;margin-top:0;}
+.section{padding:30px;max-width:1000px;margin:0 auto;}
+h1,h2,h3{color:#5A4A2F;margin-top:0;}
 ul{padding-left:20px;}
 label{display:block;font-weight:bold;margin-top:10px;}
-input,textarea,select{width:100%;padding:8px;border-radius:4px;border:1px solid #ccc;box-sizing:border-box;}
+input,textarea,select{width:100%;padding:8px;border-radius:4px;border:1px solid:#ccc;box-sizing:border-box;}
+input[type="checkbox"]{width:auto;}
 button,.btn{background:#8B2E2E;color:#fff;border:none;padding:8px 14px;border-radius:4px;cursor:pointer;margin-top:12px;}
 button:hover,.btn:hover{opacity:0.9;}
-.footer-bottom{font-size:12px;margin-top:8px;border-top:1px solid rgba(255,255,255,0.3);padding-top:6px;}
-</style></head><body>
+.small-text{font-size:12px;color:#444;margin-top:6px;}
+.field-group{margin-bottom:12px;}
+</style>
+</head>
+<body>
 
 <header>
   <div class="nav">
     <div class="nav-left">
-      <img src="logo.png" alt="Logo"/>
-      <div><strong>Tactical Terrain &amp; Transport LLC</strong><br/>
-      <small>Land Clearing • Transport • Horse Hauling</small></div>
+      <img src="logo.png" alt="Tactical Terrain & Transport Logo"/>
+      <div>
+        <strong>Tactical Terrain &amp; Transport LLC</strong><br/>
+        <small>Land Clearing • Transport • Horse Hauling</small>
+      </div>
     </div>
-    <div><a href="index.html">Home</a> • <a href="services.html">Services</a> • <a href="horses.html">Horse Transport</a> • <a href="booking.html"><strong>Book Transport</strong></a> • <a href="contract.html">Transport Contract</a> • <a href="about.html">About</a> • <a href="gallery.html">Gallery</a> • <a href="contact.html">Contact</a></div>
+    <div class="nav-right"><a href="index.html">Home</a> • <a href="services.html">Services</a> • <a href="horses.html">Horse Transport</a> • <a href="booking.html"><strong>Book Transport</strong></a> • <a href="contract.html">Transport Contract</a> • <a href="about.html">About</a> • <a href="gallery.html">Gallery</a> • <a href="contact.html">Contact</a></div>
   </div>
 </header>
+
 <div class="section">
-<h1>Horse Transport Booking</h1>
-<form action="https://formspree.io/f/xzzoarry" method="POST">
-<label>Owner Name</label><input name="Owner Name" required/>
-<label>Phone</label><input name="Phone" required/>
-<label>Email</label><input name="Email" type="email" required/>
-<label>Pickup Location</label><input name="Pickup"/>
-<label>Drop-Off Location</label><input name="Drop-Off"/>
-<label>Date</label><input type="date" name="Date"/>
-<label>Horse Info</label><textarea name="Horse Info"></textarea>
-<button>Submit</button>
-</form>
+  <h1>Horse Transport Booking Form</h1>
+  <p>Provide as much detail as possible so we can accurately quote and schedule your haul.</p>
+  <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" enctype="multipart/form-data">
+    <input type="hidden" name="_subject" value="New Horse Transport Booking Request"/>
+
+    <h2>1. Horse Information</h2>
+    <div class="field-group">
+      <label for="horse_name">Horse Name</label>
+      <input type="text" id="horse_name" name="Horse Name" />
+    </div>
+    <div class="field-group">
+      <label for="horse_breed">Breed</label>
+      <input type="text" id="horse_breed" name="Breed" />
+    </div>
+    <div class="field-group">
+      <label for="horse_sex">Sex</label>
+      <input type="text" id="horse_sex" name="Sex" placeholder="Mare, gelding, stallion, etc." />
+    </div>
+    <div class="field-group">
+      <label for="horse_age">Age</label>
+      <input type="text" id="horse_age" name="Age" />
+    </div>
+    <div class="field-group">
+      <label for="horse_temperament">Temperament</label>
+      <input type="text" id="horse_temperament" name="Temperament" placeholder="Calm, sensitive, anxious, etc." />
+    </div>
+    <div class="field-group">
+      <label for="horse_loads_well">Loads Well?</label>
+      <input type="text" id="horse_loads_well" name="Loads Well?" placeholder="Yes/No, needs extra time, etc." />
+    </div>
+    <div class="field-group">
+      <label for="horse_color">Color / Markings</label>
+      <input type="text" id="horse_color" name="Color / Markings" />
+    </div>
+    <div class="field-group">
+      <label for="horse_behavior">Behavioral Notes</label>
+      <textarea id="horse_behavior" name="Behavioral Notes" placeholder="Kicking, pawing, buddy sour, medical concerns, etc."></textarea>
+    </div>
+
+    <h2>2. Pickup &amp; Delivery Locations</h2>
+    <div class="field-group">
+      <label for="pickup_exact">Pickup Location (Exact Address)</label>
+      <input type="text" id="pickup_exact" name="Pickup Address" placeholder="Street, City, State, ZIP" />
+    </div>
+    <div class="field-group">
+      <label for="dropoff_exact">Delivery Location (Exact Address)</label>
+      <input type="text" id="dropoff_exact" name="Delivery Address" placeholder="Street, City, State, ZIP" />
+    </div>
+    <div class="field-group">
+      <label for="preferred_date">Preferred Transport Date</label>
+      <input type="date" id="preferred_date" name="Preferred Date" />
+    </div>
+
+    <h2>3. Owner / Client Information</h2>
+    <div class="field-group">
+      <label for="owner_name">Owner / Client Name</label>
+      <input type="text" id="owner_name" name="Owner / Client Name" required />
+    </div>
+    <div class="field-group">
+      <label for="owner_address">Owner / Client Address</label>
+      <input type="text" id="owner_address" name="Owner Address" placeholder="Street, City, State, ZIP" />
+    </div>
+    <div class="field-group">
+      <label for="owner_email">Email</label>
+      <input type="email" id="owner_email" name="Owner Email" required />
+    </div>
+    <div class="field-group">
+      <label for="owner_phone">Phone</label>
+      <input type="text" id="owner_phone" name="Owner Phone" required />
+    </div>
+
+    <h2>4. Horse Health Documentation</h2>
+    <p class="small-text">
+      Please confirm you will provide the required health paperwork. You may upload digital copies here or bring them at pickup.
+    </p>
+    <div class="field-group">
+      <label><input type="checkbox" name="Health Cert Confirmed" value="Yes"/> I have or will obtain a Health Certificate dated within 30 days of transport.</label>
+    </div>
+    <div class="field-group">
+      <label><input type="checkbox" name="Coggins Confirmed" value="Yes"/> I have a Negative Coggins test within the last 6 months.</label>
+    </div>
+    <div class="field-group">
+      <label for="health_cert_file">Upload Health Certificate (PDF/JPG/PNG)</label>
+      <input type="file" id="health_cert_file" name="Health Certificate File" />
+    </div>
+    <div class="field-group">
+      <label for="coggins_file">Upload Negative Coggins (PDF/JPG/PNG)</label>
+      <input type="file" id="coggins_file" name="Coggins File" />
+    </div>
+
+    <h2>5. Fee Calculations (Estimate)</h2>
+    <p class="small-text">
+      Our standard pricing structure:
+      <br/>• Base Rate: $1.50 per mile
+      <br/>• Minimum Charge: $175
+      <br/>• Surcharge: +$0.25/mile for distances over 150 miles
+      <br/>• Deadhead Miles: $0.75/mile for miles exceeding 50 deadhead miles
+    </p>
+    <div class="field-group">
+      <label for="est_miles">Estimated Loaded Miles</label>
+      <input type="text" id="est_miles" name="Estimated Loaded Miles" placeholder="Approximate one-way or round trip miles" />
+    </div>
+    <div class="field-group">
+      <label for="est_deadhead">Estimated Deadhead Miles (if known)</label>
+      <input type="text" id="est_deadhead" name="Estimated Deadhead Miles" />
+    </div>
+
+    <h2>6. Liability Release &amp; Payment Terms</h2>
+    <p class="small-text">
+      By booking transport with Tactical Terrain &amp; Transport LLC / Veteran’s Choice Horse Transport, you acknowledge
+      that while every reasonable precaution is taken, hauling live animals carries inherent risk. You agree that the
+      horse will be fit for travel and properly shod or trimmed, and that all required veterinary paperwork will be
+      provided prior to loading.
+      <br/><br/>
+      Payment Terms:
+      <br/>• 50% deposit due before pickup (to reserve date and route)
+      <br/>• Remaining balance due upon delivery of the horse
+      <br/>• Any additional layovers, wait time, or route changes may incur additional charges as discussed and agreed.
+    </p>
+    <div class="field-group">
+      <label>
+        <input type="checkbox" name="Liability & Payment Agreement" value="Agreed" required/>
+        I have read and agree to the Liability Release and Payment Terms.
+      </label>
+    </div>
+
+    <button type="submit">Submit Booking Request</button>
+    <p class="small-text">
+      Note: File uploads require that your email handling service (such as Formspree) supports attachments.
+      Be sure to configure your Formspree form accordingly.
+    </p>
+  </form>
 </div>
+
 <footer>
-  <div>Tactical Terrain &amp; Transport LLC — Veteran Owned & Operated</div>
+  <div>Tactical Terrain &amp; Transport LLC — Veteran Owned &amp; Operated</div>
   <div>702-279-7013 • info@tacticalterrainandtransport.com • tacticalterrainandtransport.com</div>
-</footer></body></html>
+</footer>
+
+</body>
+</html>

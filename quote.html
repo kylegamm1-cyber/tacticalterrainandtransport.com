@@ -1,43 +1,87 @@
-<html><head><title>Quote</title>
-<style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Request a Quote | Tactical Terrain & Transport</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <style>
 body{font-family:Arial,Helvetica,sans-serif;margin:0;background:#f7f4ee;color:#222;}
 header,footer{background:#5A4A2F;color:#fff;padding:15px 30px;}
 a{color:#5A4A2F;text-decoration:none;}header a{color:#fff;}
 .nav{display:flex;justify-content:space-between;align-items:center;gap:20px;}
 .nav-left{display:flex;align-items:center;gap:10px;}
 .nav-left img{height:55px;width:auto;border-radius:4px;}
-.section{padding:30px;}
-h1,h2{color:#5A4A2F;margin-top:0;}
+.section{padding:30px;max-width:1000px;margin:0 auto;}
+h1,h2,h3{color:#5A4A2F;margin-top:0;}
 ul{padding-left:20px;}
 label{display:block;font-weight:bold;margin-top:10px;}
-input,textarea,select{width:100%;padding:8px;border-radius:4px;border:1px solid #ccc;box-sizing:border-box;}
+input,textarea,select{width:100%;padding:8px;border-radius:4px;border:1px solid:#ccc;box-sizing:border-box;}
+input[type="checkbox"]{width:auto;}
 button,.btn{background:#8B2E2E;color:#fff;border:none;padding:8px 14px;border-radius:4px;cursor:pointer;margin-top:12px;}
 button:hover,.btn:hover{opacity:0.9;}
-.footer-bottom{font-size:12px;margin-top:8px;border-top:1px solid rgba(255,255,255,0.3);padding-top:6px;}
-</style></head><body>
+.small-text{font-size:12px;color:#444;margin-top:6px;}
+.field-group{margin-bottom:12px;}
+</style>
+</head>
+<body>
 
 <header>
   <div class="nav">
     <div class="nav-left">
-      <img src="logo.png" alt="Logo"/>
-      <div><strong>Tactical Terrain &amp; Transport LLC</strong><br/>
-      <small>Land Clearing • Transport • Horse Hauling</small></div>
+      <img src="logo.png" alt="Tactical Terrain & Transport Logo"/>
+      <div>
+        <strong>Tactical Terrain &amp; Transport LLC</strong><br/>
+        <small>Land Clearing • Transport • Horse Hauling</small>
+      </div>
     </div>
-    <div><a href="index.html">Home</a> • <a href="services.html">Services</a> • <a href="horses.html">Horse Transport</a> • <a href="booking.html">Book Transport</a> • <a href="contract.html">Transport Contract</a> • <a href="about.html">About</a> • <a href="gallery.html">Gallery</a> • <a href="contact.html"><strong>Contact</strong></a></div>
+    <div class="nav-right"><a href="index.html">Home</a> • <a href="services.html">Services</a> • <a href="horses.html">Horse Transport</a> • <a href="booking.html">Book Transport</a> • <a href="contract.html">Transport Contract</a> • <a href="about.html">About</a> • <a href="gallery.html">Gallery</a> • <a href="contact.html"><strong>Contact</strong></a></div>
   </div>
 </header>
-<div class="section"><h1>Request a Quote</h1>
-<form action="https://formspree.io/f/xzzoarry" method="POST">
-<label>Name</label><input name="Name" required/>
-<label>Phone</label><input name="Phone" required/>
-<label>Email</label><input name="Email" type="email" required/>
-<label>Service Type</label>
-<select name="Type"><option>Land</option><option>Horse Transport</option><option>Both</option></select>
-<label>Details</label><textarea name="Details"></textarea>
-<button>Submit</button>
-</form>
+
+<div class="section">
+  <h1>Request a Quote</h1>
+  <p>Use this form to request a quote for land services, horse transport, or both.</p>
+  <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+    <input type="hidden" name="_subject" value="New Quote Request from Website"/>
+    <div class="field-group">
+      <label for="q_name">Name</label>
+      <input type="text" id="q_name" name="Name" required/>
+    </div>
+    <div class="field-group">
+      <label for="q_phone">Phone</label>
+      <input type="text" id="q_phone" name="Phone" required/>
+    </div>
+    <div class="field-group">
+      <label for="q_email">Email</label>
+      <input type="email" id="q_email" name="Email" required/>
+    </div>
+    <div class="field-group">
+      <label for="q_service">Service Type</label>
+      <select id="q_service" name="Service Type">
+        <option value="Land Services">Land Services</option>
+        <option value="Horse Transport">Horse Transport</option>
+        <option value="Both">Both</option>
+      </select>
+    </div>
+    <div class="field-group">
+      <label for="q_location">Property / Pickup Location</label>
+      <input type="text" id="q_location" name="Location"/>
+    </div>
+    <div class="field-group">
+      <label for="q_details">Project / Transport Details</label>
+      <textarea id="q_details" name="Details"></textarea>
+    </div>
+    <button type="submit">Submit Quote Request</button>
+    <p class="small-text">
+      This form is wired for email via Formspree once you replace the endpoint URL with your own form ID.
+    </p>
+  </form>
 </div>
+
 <footer>
-  <div>Tactical Terrain &amp; Transport LLC — Veteran Owned & Operated</div>
+  <div>Tactical Terrain &amp; Transport LLC — Veteran Owned &amp; Operated</div>
   <div>702-279-7013 • info@tacticalterrainandtransport.com • tacticalterrainandtransport.com</div>
-</footer></body></html>
+</footer>
+
+</body>
+</html>
