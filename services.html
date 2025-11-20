@@ -1,31 +1,83 @@
-<html><head><style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Services | Tactical Terrain & Transport</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <style>
 body{font-family:Arial,Helvetica,sans-serif;margin:0;background:#f7f4ee;color:#222;}
 header,footer{background:#5A4A2F;color:#fff;padding:15px 30px;}
 a{color:#5A4A2F;text-decoration:none;}header a{color:#fff;}
-.nav{display:flex;justify-content:space-between;align-items:center;}
+.nav{display:flex;justify-content:space-between;align-items:center;gap:20px;}
 .nav-left{display:flex;align-items:center;gap:10px;}
 .nav-left img{height:55px;width:auto;border-radius:4px;}
-.section{padding:30px;max-width:1100px;margin:auto;}
+.section{padding:30px;max-width:1100px;margin:0 auto;}
 h1,h2,h3{color:#5A4A2F;margin-top:0;}
+ul{padding-left:20px;}
 label{display:block;font-weight:bold;margin-top:10px;}
-input,textarea,select{width:100%;padding:8px;border-radius:4px;border:1px solid #ccc;}
+input,textarea,select{width:100%;padding:8px;border-radius:4px;border:1px solid:#ccc;box-sizing:border-box;}
+input[type="checkbox"]{width:auto;}
 button,.btn{background:#8B2E2E;color:#fff;border:none;padding:10px 18px;border-radius:4px;cursor:pointer;margin-top:12px;}
 button:hover,.btn:hover{opacity:0.9;}
-.small-text{font-size:12px;color:#444;}
-.form-card{background:white;padding:20px;border-radius:8px;box-shadow:0 0 6px rgba(0,0,0,0.1);}
-</style><title>Services</title></head><body>
+.small-text{font-size:12px;color:#444;margin-top:6px;}
+.field-group{margin-bottom:12px;}
+.form-card{background:#fff;padding:20px;border-radius:8px;box-shadow:0 0 6px rgba(0,0,0,0.1);}
+.floating-quote-btn{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  background:#8B2E2E;
+  color:#fff;
+  padding:10px 18px;
+  border-radius:999px;
+  box-shadow:0 3px 8px rgba(0,0,0,0.3);
+  font-weight:bold;
+  z-index:999;
+}
+.floating-quote-btn:hover{opacity:0.9;}
+</style>
+</head>
+<body>
+
 <header>
   <div class="nav">
     <div class="nav-left">
-      <img src="logo.png" alt="Logo"/>
-      <div><strong>Tactical Terrain &amp; Transport LLC</strong><br/><small>Land Clearing • Transport • Horse Hauling</small></div>
+      <img src="logo.png" alt="Tactical Terrain & Transport Logo"/>
+      <div>
+        <strong>Tactical Terrain &amp; Transport LLC</strong><br/>
+        <small>Land Clearing • Transport • Horse Hauling</small>
+      </div>
     </div>
     <div class="nav-right"><a href="index.html">Home</a> • <a href="services.html"><strong>Services</strong></a> • <a href="horses.html">Horse Transport</a> • <a href="booking.html">Book Transport</a> • <a href="contract.html">Transport Contract</a> • <a href="about.html">About</a> • <a href="gallery.html">Gallery</a> • <a href="contact.html">Contact</a></div>
   </div>
 </header>
-<div class='section'><h1>Services</h1><p>Forestry mulching, land clearing, driveway repair, storm cleanup, and horse transport.</p></div>
+
+<div class="section">
+  <h1>Services</h1>
+  <h2>Land Services</h2>
+  <ul>
+    <li>Forestry Mulching &amp; Land Clearing</li>
+    <li>Driveway &amp; Access Road Restoration</li>
+    <li>Storm Debris Cleanup</li>
+    <li>Light Grading &amp; Site Prep</li>
+  </ul>
+  <h2>Horse Transportation Services</h2>
+  <ul>
+    <li>Local &amp; Regional Hauling</li>
+    <li>Private Single-Horse &amp; Multi-Horse Trips</li>
+    <li>Door-to-Door Transport</li>
+    <li>Health Certificate (within 30 days) required</li>
+    <li>Negative Coggins (within 6 months) required</li>
+    <li>Temperature checks when traveling through regulated states (e.g., Delaware)</li>
+  </ul>
+  <a href="booking.html" class="btn">Book Horse Transport</a>
+</div>
+
 <footer>
-  <div>Tactical Terrain &amp; Transport LLC — Veteran Owned & Operated</div>
+  <div>Tactical Terrain &amp; Transport LLC — Veteran Owned &amp; Operated</div>
   <div>702-279-7013 • info@tacticalterrainandtransport.com • tacticalterrainandtransport.com</div>
 </footer>
-</body></html>
+
+<a href="index.html#free-quote" class="floating-quote-btn">Request a Quote</a>
+</body>
+</html>
